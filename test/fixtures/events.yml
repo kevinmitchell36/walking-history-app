@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-04-09
+  time_of_day: MyString
+  name: MyString
+  description_level_1: MyText
+  description_level_2: MyText
+  description_level_3: MyText
+  location_id: 1
+  category_id: 1
+  year: MyString
+
+two:
+  date: 2017-04-09
+  time_of_day: MyString
+  name: MyString
+  description_level_1: MyText
+  description_level_2: MyText
+  description_level_3: MyText
+  location_id: 1
+  category_id: 1
+  year: MyString
