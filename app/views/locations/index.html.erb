@@ -1,2 +1,9 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<h1>Hello World!</h1>
+<% @locations.each do |location| %>
+<p> <%= location.current_name %></p>
+<p> <%= location.former_name %></p>
+<p> <%= location.address %></p>
+<p> <%= location.latitude %></p>
+<p> <%= location.longitude %></p>
+<p> <%= location.description %></p>
+<% end %>
