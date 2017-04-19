@@ -37,3 +37,5 @@ LocationUser.create([
   {user_id: 1, location_id: 4, visited: false}
   ])
   
+
+

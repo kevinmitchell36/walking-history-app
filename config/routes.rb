@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/locations' => 'locations#index'
+  get '/locations/new' => 'locations#new'
+  post '/locations/' => 'locations#create'
+  get '/locations/:id' => 'locations#show'
+  post '/locations/:id/edit' => 'locations#edit'
+  patch '/locations/:id' => 'locations#update'
+  delete '/locations/:id' => 'locations#destroy'
 end
