@@ -1,8 +1,8 @@
 # User.create([
-#   {first_name: "Rando", last_name: "Used", email: "rando@email.com", password_digest: "password", username: "rando21"},
-#   {first_name: "Randette", last_name: "User", email: "randette@email.com", password_digest: "password", username: "randette22"},
-#   {first_name: "Randini", last_name: "UsedUp", email: "randini@email.com", password_digest: "password", username: "randini23"},
-#   {first_name: "Peter", last_name: "Jang", email: "peter@email.com", password_digest: "password", username: "pete"}
+#   {first_name: "Rando", last_name: "Used", email: "rando@email.com", password: "password", username: "rando21"},
+#   {first_name: "Randette", last_name: "User", email: "randette@email.com", password: "password", username: "randette22"},
+#   {first_name: "Randini", last_name: "UsedUp", email: "randini@email.com", password: "password", username: "randini23"},
+#   {first_name: "Peter", last_name: "Jang", email: "peter@email.com", password: "password", username: "pete"}
 # ])
 
 # Location.create([
