@@ -1,4 +1,6 @@
-<h1>Hello World!</h1>
+<% if current_user %>
+<h1>Hello, <%=current_user.first_name %>!</h1>
+<% end %>
 <% @locations.each do |location| %>
 <p> <%= location.current_name %></p>
 <p> <%= location.former_name %></p>
