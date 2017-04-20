@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       email: params[:email],
       username: params[:username],
       password: params[:password],
+      level: 0,
       password_confirmation: params[:password_confirmation]
     )
     if user.save

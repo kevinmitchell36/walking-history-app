@@ -1,8 +1,18 @@
-<h1> <%= @location.current_name %> events: </h1>
-<p> <%= @location.events.first.date %> </p>
-<p> <%= @location.events.first.time_of_day%> </p>
-<p> <%= @location.events.first.description_level_1%> </p>
-<p> <%= @location.events.first.description_level_2%> </p>
-<p> <%= @location.events.first.description_level_3%> </p>
-
+  <h1> <%= @location.current_name %> events: </h1>
+  <p> <%= @location.events.first.date %> </p>
+  <p> <%= @location.events.first.time_of_day%> </p>
+<% if current_user %>
+  <% if current_user.level == 3 %>
+  <p> <%= @location.events.first.description_level_1%> </p>
+  <p> <%= @location.events.first.description_level_2%> </p>
+  <p> <%= @location.events.first.description_level_3%> </p>
+  <% elsif current_user.level == 2 %>
+  <p> <%= @location.events.first.description_level_1%> </p>
+  <p> <%= @location.events.first.description_level_2%> </p>
+  <% elsif current_user.level == 1 %>
+  <p> <%= @location.events.first.description_level_1%> </p>
+  <% else %>
+  <a href="/login">Please login</a>
+  <% end %>
+<% end %>
 
