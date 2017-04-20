@@ -1,3 +1,8 @@
-<h1> <%= location.current_name %> events: </h1>
+<h1> <%= @location.current_name %> events: </h1>
+<p> <%= @location.events.first.date %> </p>
+<p> <%= @location.events.first.time_of_day%> </p>
+<p> <%= @location.events.first.description_level_1%> </p>
+<p> <%= @location.events.first.description_level_2%> </p>
+<p> <%= @location.events.first.description_level_3%> </p>
 
 
