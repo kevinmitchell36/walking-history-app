@@ -11,8 +11,10 @@
   <p> <%= @location.events.first.description_level_2%> </p>
   <% elsif current_user.level == 1 %>
   <p> <%= @location.events.first.description_level_1%> </p>
-  <% else %>
-  <a href="/login">Please login</a>
+  <% elsif current_user.level == 0 %>
+  <p>Please visit another location to learn more</p>
   <% end %>
+<% else %>
+  <a href="/login">Please login</a>
 <% end %>
 
