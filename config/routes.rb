@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
   
+
+
+  get '/events' => 'events#index'
+  get 'events/:id' => 'events#show'
+
   namespace :api do
     namespace :v1 do
       get 'locations' => 'locations#index'
       get 'locations/:id' => 'locations#show'
+
+      get 'events' => 'events#index'
+      get 'events/:id' => 'events#show'
     end
   end
 
-  get '/locations' => 'locations#index'
+  get '/' => 'locations#index'
   get '/locations/new' => 'locations#new'
   post '/locations/' => 'locations#create'
   get '/locations/:id' => 'locations#show'

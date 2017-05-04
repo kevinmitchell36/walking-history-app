@@ -30,12 +30,34 @@
   
 #   ])  
 
-LocationUser.create([
-  {user_id: 1, location_id: 1, visited: true},
-  {user_id: 1, location_id: 2, visited: true},
-  {user_id: 1, location_id: 3, visited: false},
-  {user_id: 1, location_id: 4, visited: false}
-  ])
+# LocationUser.create([
+#   {user_id: 1, location_id: 1, visited: true},
+#   {user_id: 1, location_id: 2, visited: true},
+#   {user_id: 1, location_id: 3, visited: false},
+#   {user_id: 1, location_id: 4, visited: false}
+#   ])
   
+# Event.create([
+#   {date:"January 2, 1972", time_of_day: "afternoon", name: "Gacy's First victim", description_level_1: "Timothy McCoy was on a trip", description_level_2: "Gacy took him back to his house", description_level_3: "censored", location_id: 1, category_id: 3, year: "1972"},
+#   {date: "October 8, 1871", time_of_day: "evening", name: "The Great Fire", description_level_1: "Mrs. O'leary's cow kicked...", description_level_2: "Mrs. O'Leary was Irish", description_level_3: "What really happened?", location_id:  6, category_id: 2},
+#   {date: "Feb 1890", time_of_day: "afternoon", name: "Awaiting the news", description_level_1: "Burnham and Root are waiting", description_level_2: "It was rumored they would build...", description_level_3: "John Root's floating grillage", location_id: 7, category_id: 2},
+#   {date: "1924", time_of_day: "afternoon", name: "The Chicago handshake", description_level_1: "Dean O'Bannion was arranging", description_level_2: "The flowers were for Mike Merlo", description_level_3: "This kicked off the beer wars", location_id: 10, category_id: 1}
+# ])
+
+# Location.create([
+#   {current_name: "Fire Academy", former_name: "Mrs. O'Leary's Barn", address: "147 De Koven St.", latitude: 41.869468, longitude: -87.641886, description: "Used to be a barn..."},
+#   {current_name: "The Rookery", former_name: "The Rookery", address: "209 S. Lasalle St.", latitude: 41.87904, longitude: -87.631881, description: "Built in..."},
+#   {current_name: "Parking lot for Holy Name", former_name: "Schofield's Flowers", latitude: 41.896232, longitude: -87.628314, description: "An ordinary flower shop?"}
+#   ])
+
+
+# LocationUser.create([
+#   {user_id: 6, location_id: 5, visited: true},
+#   {user_id: 6, location_id: 6, visited: true},
+#   {user_id: 6, location_id: 7, visited: false},
+#   {user_id: 6, location_id: 10, visited: false}
+#   ])
+
+
 
 

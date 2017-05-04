@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = 'Successfully logged in!'
-      redirect_to '/locations'
+      redirect_to '/'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/login'
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = 'Successfully logged out!'
-    redirect_to '/login'
+    redirect_to '/'
   end
 end

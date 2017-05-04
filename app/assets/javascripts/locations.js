@@ -1,10 +1,12 @@
-/* global Vue */
+/* global Vue, $, google */
 document.addEventListener("DOMContentLoaded", function(event) { 
   var app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Vue!',
-      locations: []
+      locations: [],
+      events: []
+
     },
     mounted: function() {
       $.get("api/v1/locations", function(responseData) {
@@ -18,21 +20,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
+          zoom: 12,
           center: new google.maps.LatLng(41.875313, -87.624743),
         });
 
         var markers = [];
         for (var i = 0; i < this.locations.length; i++) {
           var location = this.locations[i];
-          var textBox = "<div>" + location.current_name + "<p>" + location.description + "</p>" + "</div>"; 
-          var pin = [textBox, location.latitude, location.longitude];
+          var textBoxOne = "<div>" + location.current_name + 
+                            "<p>" + location.description + "</p>" + 
+                            
+                              "<p>" + location.events + "</a>" +
+                            
+                            "</div>"; 
+          var pin = [textBoxOne, location.latitude, location.longitude];
           markers.push(pin);
         }
 
         var infowindow = new google.maps.InfoWindow({});
 
-        var marker, i;
+        var marker;
 
         for (i = 0; i < markers.length; i++) {
           marker = new google.maps.Marker({
@@ -40,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             map: map
           });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
-            infowindow.setContent(markers[i][0]);
-            infowindow.open(map, marker);
-          };
-        })(marker, i));
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(markers[i][0]);
+              infowindow.open(map, marker);
+            };
+          })(marker, i));
         }
         
       }

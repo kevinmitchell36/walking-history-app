@@ -2,13 +2,148 @@
 <html>
   <head>
     <title>WalkingHistoryApp</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font icons CSS -->
+    <link href="/assets/plugins/icons-mind/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Plugins CSS -->
+<!--     <link href="/assets/plugins/jpreloader/css/jpreloader.css" rel="stylesheet" type="text/css">    
+ -->    <link href="/assets/plugins/animate-css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/plugins/magnificPopup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="/assets/plugins/flexSlider/flexslider.css" rel="stylesheet" type="text/css">
+    <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="/assets/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    
+    <!-- Main CSS -->
+    <link href="/assets/css/berg.css" rel="stylesheet" type="text/css">
+    
+    <!-- Color CSS -->
+    <link href="/assets/css/colors/yellow.css" rel="stylesheet" type="text/css">
+    
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries 
+    [if lt IE 8]-->
+    <!--<script src="/assets/plugins/modernizr.min.js"></script>-->
+    <!--[endif]-->
+
   </head>
 
-  <body>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="66">
+
+   <!-- HERO START -->
+    <header id="home" class="hero owl-bg-carousel-yes">
+        <div class="owl-bg-carousel owl-carousel">
+            <div class="item owl-bg-image full-screen" style="background-image: url(/assets/images/bg-slideshow-1.jpg');"></div>
+            <div class="item owl-bg-image full-screen" style="background-image: url(/assets/images/bg-slideshow-2.jpg');"></div>
+            <div class="item owl-bg-image full-screen" style="background-image: url(/assets/images/bg-slideshow-3.jpg');"></div>
+        </div>
+        <!-- //.owl-bg-carousel -->
+        
+        <div class="hero-body">
+            <div class="hero-text text-center">
+                <h1>
+                    Finding History <span class="blinker"></span>
+                </h1>
+                
+               <!--  <h1 class="small">Creative Developer</h1>
+                
+                <p>28 years young, husband and father, coffee addict.</p> -->
+                
+                <div class="page-scroll">
+                    <a href="#profile" class="btn btn-lg btn-custom">
+                        Know Me Better
+                    </a>
+                </div>
+                <!-- //.page-scroll -->
+            </div>
+            <!-- //.hero-text -->
+        </div>
+        <!-- //.hero-body -->
+    </header>
+    <!-- //HERO END -->
+    
+    
+    <!-- NAVIGATION START -->
+    <nav id="navigation" class="navbar navbar-fixed-top center-menu" role="navigation">
+        <div class="container navbar-container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".berg-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-brand visible-xs visible-sm" href="#page-top">BERG</a>
+            </div>
+            <!-- //.navbar-header -->
+            
+            <div class="navbar-collapse collapse berg-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll">
+                        <a href="#home">Home</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#profile">Profile</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#services">Services</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#resume">Resume</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#references">References</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="#skills">Skills</a>
+                    </li>
+                    
+                   <!--  <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li> -->
+                    <li> 
+                        <a href="/signup">Sign Up!</a>
+                    </li>
+                    <li> 
+                        <a href="/login">Login</a>
+                    </li>
+                    <li> 
+                        <a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //.navbar-collapse -->
+        </div>
+        <!-- //.navbar-container -->
+    </nav>
+    <!-- //NAVIGATION END -->
+
+
+
+
+    
   <div class="container">
     <% flash.each do |name, message| %>
       <div class="alert alert-<%= name %> alert-dismissible" role="alert">
@@ -17,6 +152,96 @@
       </div>
     <% end %>
     <%= yield %>
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-scroll">
+                        <a href="#page-top"><i class="icon-Arrow-Up"></i></a>
+                    </div>
+                    <!-- //.page-scroll -->
+                    
+                    <ul class="list-inline social-icons">
+                        <li>
+                            <div class="item">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                        
+                        <li>
+                            <div class="item">
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                        
+                        <li>
+                            <div class="item">
+                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                        
+                        <li>
+                            <div class="item">
+                                <a href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                        
+                        <li>
+                            <div class="item">
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- //.col-md-12 -->
+            </div>
+            <!-- //.row -->
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright text-center">
+                        <p class="text-grey">&copy; 2015 Nick Berg. All rights reserved.</p>
+                    </div>
+                    <!-- //.copyright -->
+                </div>
+                <!-- //.col-md-12 -->
+            </div>
+            <!-- //.row -->
+        </div>
+        <!-- //.container -->
+    </footer>
+    <!-- //FOOTER END -->
+    
+    
+    <!-- Plugins JS -->
+    <script src="/assets/plugins/jquery.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!--     <script src="/assets/plugins/jpreloader/js/jpreloader.min.js"></script>
+ -->    <script src="/assets/plugins/detectmobilebrowser/detectmobilebrowser.js"></script>
+    <script src="/assets/plugins/debouncer/debouncer.js"></script>
+    <script src="/assets/plugins/easing/jquery.easing.min.js"></script>
+    <script src="/assets/plugins/sticky/jquery.sticky.js"></script>
+    <script src="/assets/plugins/inview/jquery.inview.min.js"></script>
+    <script src="/assets/plugins/matchHeight/jquery.matchHeight-min.js"></script>
+    <script src="/assets/plugins/magnificPopup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/plugins/flexSlider/jquery.flexslider-min.js"></script>
+    <script src="/assets/plugins/countTo/jquery.countTo.js"></script>
+    <script src="/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Background Carousel JS -->
+    <script src="/assets/js/bg-carousel.js"></script>
+    
+    <!-- Animation JS (Optional) -->
+    <script src="/assets/js/animation.js"></script>
 </div>
   </body>
 </html>
