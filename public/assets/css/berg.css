@@ -472,6 +472,7 @@ header.hero .hero-body .hero-text h1 {
 @media (min-width: 768px) {
   header.hero .hero-body .hero-text h1 {
     font-size: 68px;
+    font-family: papyrus;
   }
 }
 

@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
     # else
     #   @locations = Location.all
     # end
+    
     render "index.html.erb"
   end
 

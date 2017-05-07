@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var markers = [];
         for (var i = 0; i < this.locations.length; i++) {
           var location = this.locations[i];
-          var textBoxOne = "<div>" + location.current_name + 
-                            "<p>" + location.description + "</p>" + 
-                            
-                              "<p>" + location.events + "</a>" +
-                            
-                            "</div>"; 
+          console.log("Location:", location.events.map(event => event.id));
+          var textBoxOne = "";
+          textBoxOne += "<div>" + location.current_name;
+          textBoxOne += "<p>" + location.description + "</p>"; 
+          textBoxOne += "<div><a href='/events/" + location.events[0].id + "'>" + location.events[0].name + "</a></div>";
+          textBoxOne += "</div>"; 
           var pin = [textBoxOne, location.latitude, location.longitude];
           markers.push(pin);
         }
