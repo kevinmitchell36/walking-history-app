@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   get '/events/calculated' => 'events#calculated'
   get '/events/:id' => 'events#show'
-  get '/events/:id/edit' => 'events#edit'
-  patch "/events/:id" => "events#update"
+  
 
   namespace :api do
     namespace :v1 do

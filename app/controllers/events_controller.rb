@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   def calculated
     puts "-" * 50
     puts "Here are the places you have yet to visit:"
-    @locations = Location.joins(:location_users).where({ location_users: { visited: false, user_id: current_user } })
+    @locations = Location.joins(:location_users).where({ location_users: { discovered: false, user_id: current_user } })
     # puts @locations
     # @locations.each do |location|
     #   puts location.current_name
@@ -36,7 +36,7 @@ class EventsController < ApplicationController
       user_id: current_user.id,
       location_id: @locations.sample.id
     )
-    location_user.visited = true
+    location_user.discovered = true
     location_user.save
 
     redirect_to "/"
