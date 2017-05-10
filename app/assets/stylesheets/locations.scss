@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #map {
-        height: 500px;
+        height: 700px;
+        width: auto;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -14,3 +15,13 @@
 .gm-style-iw {
   color: black;
 }
+
+.gm-style {
+  background-position: center;
+}
+
+  header.hero .hero-body .hero-text h1 {
+    font-size: 68px;
+    font-family: papyrus;
+  }
+

@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var infowindow = new google.maps.InfoWindow({});
 
         var marker;
-
         for (i = 0; i < markers.length; i++) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(markers[i][1], markers[i][2]),

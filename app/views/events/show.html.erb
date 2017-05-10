@@ -1,10 +1,15 @@
-<h1> <%= @event.name %>: </h1> <a href="/events/calculated">Find another location</a>
+
+<h1> <%= @event.name %>: </h1> 
 When: <p> <%= @event.year %> </p>
 Date: <p> <%= @event.date %></p>
 Time: <p> <%= @event.time_of_day %> </p>
+
+<a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
+
 Level One Description: <p> <%= @event.description_level_1 %> </p>
 Level Two Description: <p> <%= @event.description_level_2 %> </p>
 Level Three Description: <p> <%= @event.description_level_3 %> </p>
 
 
+<a href="/events/calculated">Find another location</a>
 

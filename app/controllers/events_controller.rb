@@ -1,11 +1,13 @@
 class EventsController < ApplicationController
   def index
-    @location = Location.find_by(id: params[:id])
+
     @events = Event.all
     render "index.html.erb"
   end
 
   def show
+
+    @location = Location.find_by(id: params[:id])
     @event = Event.find_by(id: params[:id])
     render "show.html.erb"
   end
@@ -23,8 +25,8 @@ class EventsController < ApplicationController
   end
 
   def calculated
-    puts "-" * 50
-    puts "Here are the places you have yet to visit:"
+    # puts "-" * 50
+    # puts "Here are the places you have yet to visit:"
     @locations = Location.joins(:location_users).where({ location_users: { discovered: false, user_id: current_user } })
     # puts @locations
     # @locations.each do |location|
@@ -41,5 +43,23 @@ class EventsController < ApplicationController
 
     redirect_to "/"
 
+  end
+
+  def visited
+
+    # @location = Location.joins(:location_users).where({ location_users: { visited: false, user_id: current_user } })
+
+    location_user = LocationUser.find_by(
+      user_id: current_user.id,
+      location_id: params[:location_id]
+    )
+    if location_user
+      location_user.visited = true
+      location_user.save
+      redirect_to "events/#{params[:event_id]}"
+    else
+      redirect_to "/"
+    end
+    
   end
 end

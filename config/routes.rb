@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/events' => 'events#index'
   get '/events/calculated' => 'events#calculated'
+  get 'events/visited' => 'events#visited'
   get '/events/:id' => 'events#show'
   
 

@@ -1,12 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    # if !current_user 
-    #   @locations = Location.all.limit(1)
-    # elsif current_user.level == 0
-    #   @locations = Location.all.limit(1)
-    # else
-    #   @locations = Location.all
-    # end
+    @locations = Location
     
     render "index.html.erb"
   end
