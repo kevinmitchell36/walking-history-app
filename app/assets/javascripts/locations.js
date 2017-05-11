@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     },
     mounted: function() {
-      $.get("api/v1/locations", function(responseData) {
+      $.get("api/v1/locations", "api/v1/events", function(responseData) {
         this.locations = responseData;
         this.drawMap();
       }.bind(this));
     },
+   
+    
     methods: {
       drawMap: function() {
         // function initMap() {

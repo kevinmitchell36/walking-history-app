@@ -301,10 +301,11 @@
 
                         <!-- PROFILE TEXT START -->
                     <div id="app">
+                    
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="section-title">{{ message }}</h2>
+                                    <h2 class="section-title" v-for="event in events">{{ event.name }}</h2>
 
                                     <p>
                                         Nick Berg, 28 years young, born and grew up in Water Seven, Grand Line. Highly motivated creative developer with international client portfolio.
@@ -325,6 +326,7 @@
                             <!-- //.row -->
                         </div>
                     </div>
+                  
                         <!-- //PROFILE TEXT END -->
 
                         <!-- CONTACT DETAILS START -->
