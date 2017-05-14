@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location
+    
     
     render "index.html.erb"
   end

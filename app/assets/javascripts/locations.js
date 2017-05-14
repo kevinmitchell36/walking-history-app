@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       message: 'Hello Vue!',
       locations: [],
-      events: []
+      
+
+      
 
     },
     mounted: function() {
-      $.get("api/v1/locations", "api/v1/events", function(responseData) {
+      $.get("api/v1/locations", function(responseData) {
         this.locations = responseData;
         this.drawMap();
       }.bind(this));
@@ -26,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
           center: new google.maps.LatLng(41.875313, -87.624743),
         });
 
+       
+
+        var pinImageRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/F71B09/");
+        var pinImageGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/009900/");
+        var marker;
+        var pinImage;
         var markers = [];
         for (var i = 0; i < this.locations.length; i++) {
           var location = this.locations[i];
@@ -41,12 +49,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         var infowindow = new google.maps.InfoWindow({});
 
-        var marker;
+        
         for (i = 0; i < markers.length; i++) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(markers[i][1], markers[i][2]),
-            map: map
+            map: map,
+            icon: pinImage
           });
+         
+          
 
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {

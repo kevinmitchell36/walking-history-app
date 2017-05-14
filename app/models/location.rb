@@ -6,5 +6,6 @@ class Location < ApplicationRecord
   has_many :categories, through: :events
 
   
+  
 end
 

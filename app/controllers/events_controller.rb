@@ -16,26 +16,20 @@ class EventsController < ApplicationController
     # redirect_to "#profile"
   end
 
-  def edit
-    @event = Event.find_by(id: params[:id])
-    render "edit.html.erb"
-    
-  end
-
-  
-
   def calculated
     @category = Category.find_by(id: params[:id])
     @event = Event.find_by(id: params[:id])
-    @locations = Location.joins(:location_users).where({ location_users: { discovered: false, user_id: current_user } })
+    # TODO - this may need tweaking - search ALL locations, might only be searching discovered locations?
+    @locations = Location.joins(:location_users).where({ location_users: { discovered: false, user_id: current_user.id } })
    
-
-    location_user = LocationUser.find_by(
-      user_id: current_user.id,
-      location_id: @locations.sample.id
-    )
-    location_user.discovered = true
-    location_user.save
+    if @locations.length > 0
+      location_user = LocationUser.find_by(
+        user_id: current_user.id,
+        location_id: @locations.sample.id
+      )
+      location_user.discovered = true
+      location_user.save
+    end
 
     redirect_to "/"
 

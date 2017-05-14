@@ -1,4 +1,4 @@
-<h1> <%= @location.current_name %> </h1>
+
 <h1> <%= @event.name %>: </h1> 
 When: <p> <%= @event.year %> </p>
 Date: <p> <%= @event.date %></p>
@@ -7,13 +7,318 @@ Time: <p> <%= @event.time_of_day %> </p>
 <a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
 
 <% if @location_user.visited == true %>
-
+<div>
 Level One Description: <p> <%= @event.description_level_1 %> </p>
 Level Two Description: <p> <%= @event.description_level_2 %> </p>
 Level Three Description: <p> <%= @event.description_level_3 %> </p>
+</div>
 
 <% end %>
+
+<h1> <%= @current_user.level %> </h1>
 
 
 <a href="/events/calculated?category_id=<%= @event.category.id %>">Find another location</a>
 
+    <!-- PROFILE SECTION START: Events Section -->
+    <section id="profile" class="section">
+        <div class="container section-wrapper">
+            <div class="section-content">
+                <div class="row">          
+                    <div class="col-md-7 match-height">
+
+                        <!-- PROFILE TEXT START -->
+                    
+                        
+                        <div class="profile-text padding-right-yes">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="section-title"><%= @event.name %></h2><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
+
+                                <% if @location_user.visited == true %>
+
+                                    <% if current_user.level <= 1 %>
+                                    <p> <%= @event.description_level_1 %> </p>
+
+                                    <span class="divider"></span> 
+                                    <% elsif current_user.level >= 2 %> 
+                                    <p class="text-grey">
+                                        <%= @event.description_level_2 %>
+                                    </p>
+
+                                    <span class="divider"></span>
+                                    <% else %>
+                                    <p class="text-grey">
+                                        <%= @event.description_level_3 %>
+                                    </p>
+                                    <% end %>
+                                <% end %>
+                                </div>
+                                <!-- //.col-md-12 -->
+                            </div>
+                            <!-- //.row -->
+                        </div>
+                  <!-- //PROFILE TEXT END -->
+                    
+                     <!-- CONTACT DETAILS START -->
+                        <div class="contact-details padding-right-yes">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-5">
+                                    <h4>Event Details</h4>
+
+                                    <ul class="list-unstyled text-grey">
+                                        <li>When: <%= @event.year %></li>
+                                        <li>Date: <%= @event.date %></li>
+                                        <li>Time: <%= @event.time_of_day %></li>
+                                    </ul>
+                                </div>
+                                <!-- //.col-md-5 -->
+
+                                <div class="col-sm-6 col-md-7">
+                                    <a href="/events/calculated?category_id=<%= @event.category.id %>"" class="btn btn-lg btn-custom">Find another location
+                                    </a>
+                                </div>
+                                <!-- //.col-md-6 -->
+                            </div>
+                            <!-- //.row -->
+                        </div>
+                        <!-- //CONTACT DETAILS END -->    
+
+                    <!-- PROFILE PICTURE START -->
+                    <div class="col-md-5 hidden-xs hidden-sm match-height pp-wrapper">
+                        <div class="profile-picture style-one">
+                            <img src="/assets/images/profile-picture-1.jpg" alt="profile picture" class="img-responsive"/>
+                        </div>
+                    </div>
+                    <!-- //PROFILE PICTURE END -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.section-content -->
+        </div>
+        <!-- //.container -->
+    </section>
+    <!-- //PROFILE SECTION END -->
+    
+
+      <!-- PORTFOLIO SECTION START: Events Section Images -->
+    <section id="portfolio" class="section">
+        <div class="container-fluid section-wrapper">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="section-title">My Latest Work</h2>
+
+                        <p class="section-subtitle">I'm looking to expand my portfolio while I'm on top and while I'm young.</p>
+
+                        <span class="divider center"></span>
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>
+                <!-- //.row -->
+                
+                <!-- PORTFOLIO START -->
+                <div class="portfolio">
+                    <div class="row">
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-1.jpg" class="zoom" title="Buzz Lightyear">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/25963987/Buzz-Lightyear" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Buzz Lightyear</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-1.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-2.jpg" class="zoom" title="Robosam 3">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/25344153/Robosam-3" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Robosam 3</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-2.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-3.jpg" class="zoom" title="Coke Man and Dog">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/25821381/Coke-Man-and-Dog" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Coke Man and Dog</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-3.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-4.jpg" class="zoom" title="Speed Projects">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/20195929/Speed-Projects" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Speed Projects</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-4.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-5.jpg" class="zoom" title="Wooden Rhinoceros Beetle">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/26043281/Wooden-Rhinoceros-Beetle" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Wooden Rhinoceros Beetle</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-5.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-6.jpg" class="zoom" title="The First Encounter">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/25505317/The-first-Encounter" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>The First Encounter</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-6.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-7.jpg" class="zoom" title="Dead Pool">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/25763797/DEADPOOL" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Dead Pool</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-7.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+
+                        <div class="item col-sm-6 col-md-3">
+                            <div class="project-wrapper">
+                                <div class="project-link">
+                                    <a href="assets/images/portfolio/project-image-8.jpg" class="zoom" title="Rebus II">
+                                        <i class="icon-Full-Screen"></i>
+                                    </a>
+
+                                    <a href="https://www.behance.net/gallery/19401293/Rebus-2" target="_blank" class="external-link">
+                                        <i class="icon-Link"></i>
+                                    </a>
+                                </div>
+                                <!-- //.project-link -->
+
+                                <div class="project-title">
+                                    <h4>Rebus II</h4>
+                                </div>
+                                <!-- //.project-title -->
+
+                                <img src="/assets/images/portfolio/project-image-8.jpg" alt="" class="img-responsive"/>
+                            </div>
+                            <!-- //.project-wrapper -->
+                        </div>
+                        <!-- //.item -->
+                    </div>
+                    <!-- //.row -->
+                </div>
+                <!-- PORTFOLIO END -->
+            </div>
+            <!-- //.section-content -->
+        </div>
+        <!-- //.container-fluid -->
+    </section>
+    <!-- //PORTFOLIO SECTION END -->
+    
