@@ -141,156 +141,12 @@
     <!-- //NAVIGATION END -->
 
      
-     
-    <!-- SERVICES SECTION START: Intro section -->
-    <section id="services" class="section">
-        <div class="container section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                    <% if current_user %>
-                        <h2 class="section-title"> Hello, <%= current_user.first_name %>!</h2>
-                    <% end %>
+   
+   
 
-                        <p class="section-subtitle">
-                            I love what I do. I take great pride in what I do. And I can't do something halfway, three-quarters, nine-tenths. If I'm going to do something, I go all the way.
-                        </p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-            
-                
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //SERVICES SECTION END -->
-
-     <!-- STRENGTHS SECTION START: Map Section -->
-    <section id="strengths" class="section bg-image-yes">
-        <div class="container-fluid section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">My Strengths</h2>
-
-                        <p class="section-subtitle">Failure will never overtake me if my determination to succeed is strong enough.</p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-                
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <div id="map"></div>
-                        <!-- //COLUMN CHART END -->
-
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //STRENGTHS SECTION END -->
-
+    
  
-     
-    <!-- RESUME SECTION START: Timeline Section -->
-    <section id="resume" class="section">
-        <div class="container section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">My Resume</h2>
-
-                        <p class="section-subtitle">
-                            If you call failures experiments, you can put them in your resume and claim them as achievements.
-                        </p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-                
-                <!-- EDUCATION START -->
-                <!-- Start Loop: -->
-                   <div class="row education">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3>
-                            My Education
-                            <br>
-                            2003 - 2012
-                        </h3>
-
-                        <div class="panel-group resume" id="education">
-                            <div class="resume-item">
-                                <div class="resume-year">
-                                    <span class="resume-year">2010 - 2012</span>
-                                </div>
-                                <!-- //.resume-year -->
-
-                                <div class="resume-btn">
-                                    <a href="#education1" data-toggle="collapse" data-parent="#education"></a>
-                                </div>
-                                <!-- //.resume-btn -->
-
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            <h4 class="resume-title">Masters Degree - University Name</h4>
-                                        </div>
-                                        <!-- //.panel-title -->
-                                    </div>
-                                    <!-- //.panel-heading -->
-
-                                    <div id="education1" class="panel-collapse collapse in">
-                                        <div class="panel-body text-grey">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-                                            </p>
-                                        </div>
-                                        <!-- //.panel-body -->
-                                    </div>
-                                    <!-- //.panel-collapse -->
-                                </div>
-                                <!-- //.panel -->
-                            </div>
-                            <!-- //.resume-item -->
-
-                            
-                        </div>
-                        <!-- //.panel-group -->
-                    </div>
-                    <!-- //.col-md-10 -->
-                </div>
-                <!-- //EDUCATION END -->
-            
-                
-
-                            
-                        </div>
-                        <!-- //.panel-group -->
-                    </div>
-                    <!-- //.col-md-10 -->
-                </div>
-                <!-- //WORK EXPERIENCE END -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //RESUME SECTION END -->
+    
     
     
   <div class="container">
@@ -301,6 +157,55 @@
       </div>
     <% end %>
     <%= yield %>
+      <!-- CONTACT SECTION START -->
+    <section id="contact" class="section">
+        <div class="container section-wrapper">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="section-title">Contact Me</h2>
+
+                        <p class="section-subtitle">
+                            Have a project you'd like to discuss?
+                        </p>
+
+                        <span class="divider center"></span>
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>
+                <!-- //.row -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- CONTACT DETAILS START -->
+                        <div class="contact-details text-center">
+                            <div class="speech-bubble">
+                                <i class="icon-Speach-Bubble11"></i>
+
+                                <h4 class="text-grey">
+                                    Say<br>Hello
+                                </h4>
+                            </div>
+                            <!-- //.speech-bubble -->
+
+                            <h2>Nick <strong>Berg</strong></h2>
+
+                            <h4 class="text-grey">hello@nickberg.com</h4>
+
+                            <span class="divider center"></span>
+                        </div>
+                        <!-- //CONTACT DETAILS END -->
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.section-content -->
+        </div>
+        <!-- //.container -->
+    </section>
+    <!-- //CONTACT SECTION END -->
     <!-- FOOTER START -->
     <footer class="footer">
         <div class="container">
@@ -391,8 +296,8 @@
     
     <!-- Animation JS (Optional) -->
     <script src="/assets/js/animation.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"
-    async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js"
+    async defer></script> -->
 </div>
   </body>
 </html>

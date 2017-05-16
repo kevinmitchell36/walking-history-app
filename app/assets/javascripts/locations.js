@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           center: new google.maps.LatLng(41.875313, -87.624743),
         });
 
-       
-
         var pinImageRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/F71B09/");
         var pinImageGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/009900/");
         var marker;
@@ -37,13 +35,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var markers = [];
         for (var i = 0; i < this.locations.length; i++) {
           var location = this.locations[i];
+          var visited = location.visits[0].visited;
+          var discovered = location.visits[0].discovered;
+          if (visited === false && discovered === true) {
+            pinImage = pinImageGreen;
+            console.log("RED");
+          } else {
+            pinImage = pinImageRed;
+            console.log("GREEN");
+          }
           console.log("Location:", location.events.map(event => event.id));
           var textBoxOne = "";
           textBoxOne += "<div>" + location.current_name;
           textBoxOne += "<p>" + location.description + "</p>"; 
+          
           textBoxOne += "<div><a href='/events/" + location.events[0].id + "'>" + location.events[0].name + "</a></div>";
           textBoxOne += "</div>"; 
+
+
           var pin = [textBoxOne, location.latitude, location.longitude];
+          pin.icon = pinImage;
           markers.push(pin);
         }
 
@@ -54,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(markers[i][1], markers[i][2]),
             map: map,
-            icon: pinImage
+            icon: markers[i].icon
           });
          
           

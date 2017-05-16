@@ -1,19 +1,4 @@
 
-<h1> <%= @event.name %>: </h1> 
-When: <p> <%= @event.year %> </p>
-Date: <p> <%= @event.date %></p>
-Time: <p> <%= @event.time_of_day %> </p>
-
-<a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
-
-<% if @location_user.visited == true %>
-<div>
-Level One Description: <p> <%= @event.description_level_1 %> </p>
-Level Two Description: <p> <%= @event.description_level_2 %> </p>
-Level Three Description: <p> <%= @event.description_level_3 %> </p>
-</div>
-
-<% end %>
 
 <h1> <%= @current_user.level %> </h1>
 
@@ -33,11 +18,11 @@ Level Three Description: <p> <%= @event.description_level_3 %> </p>
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="section-title"><%= @event.name %></h2><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
+                                    <h2 class="section-title"><%= @location.current_name %></h2><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
 
                                 <% if @location_user.visited == true %>
 
-                                    <% if current_user.level <= 1 %>
+                                    <% if current_user.level > 0 %>
                                     <p> <%= @event.description_level_1 %> </p>
 
                                     <span class="divider"></span> 
