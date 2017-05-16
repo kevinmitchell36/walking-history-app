@@ -7,8 +7,8 @@ class EventsController < ApplicationController
 
   def show
 
-    @location = Location.find_by(id: params[:id])
     @event = Event.find_by(id: params[:id])
+    @location = Location.find_by(id: @event.location_id)
 
     @location_user = LocationUser.find_by(user_id: current_user.id, location_id: @location.id)
    

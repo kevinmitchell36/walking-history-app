@@ -48,8 +48,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
           var textBoxOne = "";
           textBoxOne += "<div>" + location.current_name;
           textBoxOne += "<p>" + location.description + "</p>"; 
-          
-          textBoxOne += "<div><a href='/events/" + location.events[0].id + "'>" + location.events[0].name + "</a></div>";
+          textBoxOne += "<div>";
+
+          location.events.forEach(function(event) {
+            var textBoxEvent = "<a href='/events/" + event.id + "'>" + event.name + "</a><br>";
+            textBoxOne += textBoxEvent;
+          });
+
+
           textBoxOne += "</div>"; 
 
 
