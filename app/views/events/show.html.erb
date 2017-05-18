@@ -1,9 +1,7 @@
 
 
-<h1> <%= @current_user.level %> </h1>
 
 
-<a href="/events/calculated?category_id=<%= @event.category.id %>">Find another location</a>
 
     <!-- PROFILE SECTION START: Events Section -->
     <section id="profile" class="section">
@@ -14,30 +12,40 @@
 
                         <!-- PROFILE TEXT START -->
                     
-                        
+                                       
+                                        <h1>Current Level: <%= @current_user.level %> </h1>
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="section-title"><%= @location.current_name %></h2><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a>
+                                    <h2 class="section-title"><%= @location.current_name %></h2>
+                                    <p> Category: <%= @event.category.category %> </p>
 
-                                <% if @location_user.visited == true %>
+                                    <button><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a></button>
+                                    <br></br>
+                                    <% if @location_user.visited == true %>
 
-                                    <% if current_user.level > 0 %>
+                                    <% if current_user.level == "Adventurer" %>
                                     <p> <%= @event.description_level_1 %> </p>
 
                                     <span class="divider"></span> 
-                                    <% elsif current_user.level >= 2 %> 
+                                    <% elsif current_user.level == "Explorer" %> 
                                     <p class="text-grey">
+                                        <%= @event.description_level_1 %>
+                                        <span class="divider"></span>
                                         <%= @event.description_level_2 %>
                                     </p>
 
                                     <span class="divider"></span>
                                     <% else %>
                                     <p class="text-grey">
+                                        <%= @event.description_level_1 %>
+                                        <span class="divider"></span>
+                                        <%= @event.description_level_2 %>
+                                        <span class="divider"></span>
                                         <%= @event.description_level_3 %>
                                     </p>
                                     <% end %>
-                                <% end %>
+                              
                                 </div>
                                 <!-- //.col-md-12 -->
                             </div>
@@ -85,6 +93,7 @@
     </section>
     <!-- //PROFILE SECTION END -->
     
+                                
 
       <!-- PORTFOLIO SECTION START: Events Section Images -->
     <section id="portfolio" class="section">
@@ -306,4 +315,4 @@
         <!-- //.container-fluid -->
     </section>
     <!-- //PORTFOLIO SECTION END -->
-    
+    <% end %>

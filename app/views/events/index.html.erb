@@ -32,23 +32,23 @@
                 <!-- EDUCATION START -->
                 <!-- Start Loop: -->
                 <% @events.each do |event| %>
-                 <!--   <div class="row education">
+                   <!-- <div class="row education">
                     <div class="col-md-10 col-md-offset-1">
                         <h3>
                             My Education
                             <br>
                             2003 - 2012
-                        </h3>
- -->
+                        </h3>   -->
+ 
                         <div class="panel-group resume" id="education">
                             <div class="resume-item">
                                 <div class="resume-year">
                                     <span class="resume-year"><%= event.date %></span>
                                 </div>
                                 <!-- //.resume-year -->
-                                    
+                                
                                 <div class="resume-btn">
-                                    <a href="#education1" data-toggle="collapse" data-parent="#education"></a>
+                                    <a href="#event-<%= event.id %>" data-toggle="collapse" data-parent="#education"></a>
                                 </div>
                                 <!-- //.resume-btn -->
                             
@@ -63,22 +63,22 @@
                                     </div>
                                     <!-- //.panel-heading -->
                                     
-                                    <div id="education1" class="panel-collapse collapse in">
+                                
+                                    <div id="event-<%= event.id %>" class="panel-collapse collapse in">
                                         <div class="panel-body text-grey">
-                                            <p>
-                                               <%= event.description_level_1 %>
+
+                                               
                                             </p>
                                         </div>
                                         <!-- //.panel-body -->
                                     </div>
                                     <!-- //.panel-collapse -->
                                 </div>
+                                
                                 <!-- //.panel -->
                             </div>
                             <!-- //.resume-item -->
                            <% end %>
-
-                            
                         </div>
                         <!-- //.panel-group -->
                     </div>

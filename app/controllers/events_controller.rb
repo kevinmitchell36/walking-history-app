@@ -1,11 +1,13 @@
 class EventsController < ApplicationController
   def index
-
-    @events = Event.all
-    render "index.html.erb"
+    
+    @events = Event.order(:date)
+   
+    render "index.html.erb" 
   end
 
   def show
+    
 
     @event = Event.find_by(id: params[:id])
     @location = Location.find_by(id: @event.location_id)
