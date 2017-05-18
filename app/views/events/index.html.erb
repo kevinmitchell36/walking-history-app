@@ -1,16 +1,5 @@
-<h1>Events:</h1>
-<% @events.each do |event| %>
-<h2> <%= event.name %> </h2>
-<p> <%= event.date %> </p>
-<p> <%= event.time_of_day %> </p>
-<p> <%= event.description_level_1 %> </p>
-<p> <%= event.description_level_2 %> </p>
-<p> <%= event.description_level_3 %> </p>
-<p> <%= event.year %> </p>
-<a href="/events/<%= event.id %>">Learn More</a>
-<% end %>
 
- 
+
     <!-- RESUME SECTION START: Timeline Section -->
     <section id="resume" class="section">
         <div class="container section-wrapper">
@@ -66,7 +55,7 @@
                                 
                                     <div id="event-<%= event.id %>" class="panel-collapse collapse in">
                                         <div class="panel-body text-grey">
-
+                                            
                                                
                                             </p>
                                         </div>

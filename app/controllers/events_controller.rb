@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def index
     
     @events = Event.order(:date)
+    
    
     render "index.html.erb" 
   end
