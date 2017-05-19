@@ -55,6 +55,18 @@
                                 
                                     <div id="event-<%= event.id %>" class="panel-collapse collapse in">
                                         <div class="panel-body text-grey">
+                                        <% if current_user.level == "Adventurer" %>
+                                            <p> <%= event.description_level_1 %> </p>
+                                        <% elsif current_user.level == "Explorer" %>
+                                            <p> <%= event.description_level_1 %> </p>
+                                            <p> <%= event.description_level_2 %> </p>
+                                        <% else current_user.level == "Scholar" %>
+                                            <p> <%= event.description_level_1 %> </p>
+                                            <p> <%= event.description_level_2 %> </p>
+                                            <p> <%= event.description_level_3 %> </p>
+                                        <% end %>
+                                            
+
                                             
                                                
                                             </p>

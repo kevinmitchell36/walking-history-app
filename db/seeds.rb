@@ -58,6 +58,10 @@
 #   {user_id: 6, location_id: 10, visited: false}
 #   ])
 
-
-
+8.times do
+  Image.create([
+    {url: "", caption: "", event_id: 2 }
+    ])
+end
+  
 

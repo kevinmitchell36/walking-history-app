@@ -20,12 +20,9 @@ Rails.application.routes.draw do
   end
 
   get '/' => 'locations#index'
-  get '/locations/new' => 'locations#new'
-  post '/locations/' => 'locations#create'
   get '/locations/:id' => 'locations#show'
-  post '/locations/:id/edit' => 'locations#edit'
-  patch '/locations/:id' => 'locations#update'
-  delete '/locations/:id' => 'locations#destroy'
+  get '/locations/reset' => 'locations#reset'
+  
 
   get "/signup" => "users#new"
   post "/users" => "users#create"

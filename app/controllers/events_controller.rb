@@ -1,9 +1,17 @@
 class EventsController < ApplicationController
   def index
     
-    @events = Event.order(:date)
-    
-   
+
+    # @events = Event.where({location_users: {visited: true, user_id: current_user.id}})
+    # @events = Event.all
+    visited_location_users = current_user.location_users.where(visited: true)
+    @events = []
+    visited_location_users.each do |location_user|
+      location_user.location.events.each do |event|
+        @events << event
+      end
+    end
+    @events.sort_by!{ |hsh| hsh[:date]}
     render "index.html.erb" 
   end
 
