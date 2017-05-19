@@ -20,9 +20,8 @@ Rails.application.routes.draw do
   end
 
   get '/' => 'locations#index'
-  get '/locations/:id' => 'locations#show'
   get '/locations/reset' => 'locations#reset'
-  
+  get '/locations/:id' => 'locations#show'
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
