@@ -57,7 +57,8 @@ class EventsController < ApplicationController
     if @location_user
       @location_user.visited = true
       @location_user.save
-      render 'show.html.erb'
+      # render 'show.html.erb'
+      redirect_to "/events/#{@event.id}"
     else
       redirect_to "/"
     end

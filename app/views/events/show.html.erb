@@ -1,8 +1,4 @@
 
-
-
-
-
     <!-- PROFILE SECTION START: Events Section -->
     <section id="profile" class="section">
         <div class="container section-wrapper">
@@ -13,14 +9,19 @@
                         <!-- PROFILE TEXT START -->
                     
                                        
-                                        <h1>Current Level: <%= @current_user.level %> </h1>
+                                        
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
                                     <h2 class="section-title"><%= @location.current_name %></h2>
-                                    <p> Category: <%= @event.category.category %> </p>
+                                    <p> Current Level: <%= @current_user.level %></p>
 
-                                    <button><a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>"">Check In</a></button>
+                                    <button onclick="geoAlert()">Check In</a></button>
+                                    <script> 
+                                    function geoAlert() {
+                                        alert('Please visit this location to learn more');
+                                    }
+                                    </script>
                                     <br></br>
                                     <% if @location_user.visited == true %>
 
@@ -117,7 +118,7 @@
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="<%=@event.images.first.url%>" class="zoom" title="<%=@event.images.first.caption%>">
+                                    <a href="" class="zoom" title="">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -128,11 +129,11 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4><%=@event.images.first.caption%></h4>
+                                    <h4></h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="<%=@event.images.first.url%>" alt="" class="img-responsive"/>
+                                <img src="" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
@@ -141,7 +142,7 @@
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="<%=@event.images.second.url%>" class="zoom" title="<%=@event.images.second.caption%>">
+                                    <a href="" class="zoom" title="">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -152,11 +153,11 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4><%=@event.images.second.caption%></h4>
+                                    <h4>></h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="<%=@event.images.second.url%>" alt="" class="img-responsive"/>
+                                <img src="" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
@@ -316,3 +317,30 @@
     </section>
     <!-- //PORTFOLIO SECTION END -->
     <% end %>
+
+    <% if current_user.level == "Adventurer" %>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="color: black">You've Leveled Up!</h4>
+              </div>
+              <div class="modal-body" style="color: black">
+                Adventurer
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+    <script>   
+        $(document).ready(function() {
+            $('#myModal').modal('show'); 
+        });
+    </script>

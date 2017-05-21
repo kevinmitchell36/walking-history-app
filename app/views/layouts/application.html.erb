@@ -120,13 +120,14 @@
                   <!--   <li class="page-scroll">
                         <a href="#skills">Skills</a>
                     </li> -->
-                    
-                   <!--  <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li> -->
+                    <% if params[:controller] == "events" && params[:action] == "show" && @location_user.visited == false %>
+                        <li>
+                            <a href="/events/visited?location_id=<%= @event.location.id %>&event_id=<%= @event.id %>">Disable Geo?</a>
+                         </li>
+                    <% end %>
                     <li> 
-                        <a href="/signup">Sign Up!</a>
-                    </li>
+                        
+                    </li> 
                     <li> 
                         <a href="/login">Login</a>
                     </li>
@@ -140,14 +141,6 @@
         <!-- //.navbar-container -->
     </nav>
     <!-- //NAVIGATION END -->
-
-     
-   
-   
-
-    
- 
-    
     
     
   <div class="container">

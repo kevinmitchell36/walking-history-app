@@ -24,10 +24,8 @@ class User < ApplicationRecord
     num_visited = location_users.where(visited: true).length
     if num_visited >= 5
       return "Scholar"
-      flash[:success] = "You have reached Scholar level!"
     elsif num_visited >= 3
       return "Explorer"
-      flash[:success] = "You have reached Explorer level!"
     else
       return "Adventurer"
     end
