@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
 
   def reset
     
-    @location_user = LocationUser.where(discovered: true, visited: true).update_all(visited: false, discovered: false)
+    @location_user = LocationUser.where(discovered: true).update_all(visited: false, discovered: false)
     location_user = LocationUser.find_by(
       user_id: current_user.id,
       location_id: 1

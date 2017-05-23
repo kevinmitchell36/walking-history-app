@@ -1,9 +1,5 @@
 class EventsController < ApplicationController
   def index
-    
-
-    # @events = Event.where({location_users: {visited: true, user_id: current_user.id}})
-    # @events = Event.all
     visited_location_users = current_user.location_users.where(visited: true)
     @events = []
     visited_location_users.each do |location_user|
@@ -16,21 +12,15 @@ class EventsController < ApplicationController
   end
 
   def show
-    
-
     @event = Event.find_by(id: params[:id])
     @location = Location.find_by(id: @event.location_id)
-
     @location_user = LocationUser.find_by(user_id: current_user.id, location_id: @location.id)
-   
     render "show.html.erb"
-    # redirect_to "#profile"
   end
 
   def calculated
     @category = Category.find_by(id: params[:id])
     @event = Event.find_by(id: params[:id])
-    # TODO - this may need tweaking - search ALL locations, might only be searching discovered locations?
     @locations = Location.joins(:location_users).where({ location_users: { discovered: false, user_id: current_user.id } })
    
     if @locations.length > 0
@@ -49,7 +39,6 @@ class EventsController < ApplicationController
   def visited
     @location = Location.find_by(id: params[:location_id])
     @event = Event.find_by(id: params[:event_id])
-
     @location_user = LocationUser.find_by(
       user_id: current_user.id,
       location_id: params[:location_id]
@@ -57,7 +46,7 @@ class EventsController < ApplicationController
     if @location_user
       @location_user.visited = true
       @location_user.save
-      # render 'show.html.erb'
+      
       redirect_to "/events/#{@event.id}"
     else
       redirect_to "/"

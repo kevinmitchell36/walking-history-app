@@ -318,8 +318,7 @@
     <!-- //PORTFOLIO SECTION END -->
     <% end %>
 
-    <% if current_user.level == "Adventurer" %>
-        <!-- Modal -->
+    <% if current_user.red == 1 && current_user.green == 1 || current_user.red == 3 && current_user.green == 3 || current_user.red == 5 && current_user.green == 5 %>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -328,7 +327,7 @@
                 <h4 class="modal-title" id="myModalLabel" style="color: black">You've Leveled Up!</h4>
               </div>
               <div class="modal-body" style="color: black">
-                Adventurer
+                <h1>Congratulations <%= current_user.level %>!</h1>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
