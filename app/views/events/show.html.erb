@@ -13,15 +13,16 @@
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="section-title"><%= @location.current_name %></h2>
-                                    <p> Current Level: <%= @current_user.level %></p>
-
                                     <button onclick="geoAlert()">Check In</a></button>
                                     <script> 
                                     function geoAlert() {
-                                        alert('Please visit this location to learn more');
+                                      alert('Please visit this location to learn more');
                                     }
                                     </script>
+                                    <br></br>
+                                    <h2 class="section-title"><%= @location.current_name %></h2>
+                                    <h4> <%= @event.name %> </h4>
+
                                     <br></br>
                                     <% if @location_user.visited == true %>
 
@@ -103,7 +104,7 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="section-title">Pictures of <%=@event.name%></h2>
+                        <h2 class="section-title">Pictures: <%=@event.name%></h2>
 
                         <!-- <p class="section-subtitle">I'm looking to expand my portfolio while I'm on top and while I'm young.</p>
  -->
@@ -120,7 +121,7 @@
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="<%= @event.images[0].url %>" class="zoom" title="">
+                                    <a href="<%= @event.images.first.url %>" class="zoom" title="<%= @event.images.first.caption %>">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -131,11 +132,11 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4> <%= @event.images[0].caption %> </h4>
+                                    <h4> <%= @event.images.first.caption %> </h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="" alt="" class="img-responsive"/>
+                                <img src="<%= @event.images.first.url %>" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
@@ -144,7 +145,7 @@
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="" class="zoom" title="">
+                                    <a href="<%= @event.images.second.url %>" class="zoom" title="<%= @event.images.second.caption %>">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -155,11 +156,11 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4>></h4>
+                                    <h4> <%= @event.images.second.caption %></h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="" alt="" class="img-responsive"/>
+                                <img src="<%= @event.images.second.url %>" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
@@ -168,7 +169,7 @@
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="assets/images/portfolio/project-image-3.jpg" class="zoom" title="Coke Man and Dog">
+                                    <a href="<%= @event.images.third.url %>" class="zoom" title="<%= @event.images.third.caption %>">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -179,20 +180,20 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4>Coke Man and Dog</h4>
+                                    <h4><%= @event.images.third.caption %></h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="/assets/images/portfolio/project-image-3.jpg" alt="" class="img-responsive"/>
+                                <img src="<%= @event.images.third.url %>" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
                         <!-- //.item -->
 
-                        <div class="item col-sm-6 col-md-3">
+                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="assets/images/portfolio/project-image-4.jpg" class="zoom" title="Speed Projects">
+                                    <a href="<%= @event.images.fourth.url %>" class="zoom" title="<%= @event.images.fourth.caption %>">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -201,19 +202,19 @@
                                     </a>
                                 </div>
                                 <!-- //.project-link -->
-
+ 
                                 <div class="project-title">
-                                    <h4>Speed Projects</h4>
+                                    <h4><%= @event.images.fourth.caption %></h4>
                                 </div>
                                 <!-- //.project-title -->
 
-                                <img src="/assets/images/portfolio/project-image-4.jpg" alt="" class="img-responsive"/>
+                                <img src="<%= @event.images.fourth.url %>" alt="" class="img-responsive"/>
                             </div>
                             <!-- //.project-wrapper -->
                         </div>
                         <!-- //.item -->
 
-                        <div class="item col-sm-6 col-md-3">
+                        <!-- <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
                                     <a href="assets/images/portfolio/project-image-5.jpg" class="zoom" title="Wooden Rhinoceros Beetle">
@@ -223,21 +224,21 @@
                                     <a href="https://www.behance.net/gallery/26043281/Wooden-Rhinoceros-Beetle" target="_blank" class="external-link">
                                         <i class="icon-Link"></i>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- //.project-link -->
 
-                                <div class="project-title">
+                                <!-- <div class="project-title">
                                     <h4>Wooden Rhinoceros Beetle</h4>
-                                </div>
+                                </div> -->
                                 <!-- //.project-title -->
 
-                                <img src="/assets/images/portfolio/project-image-5.jpg" alt="" class="img-responsive"/>
-                            </div>
+                              <!--   <img src="/assets/images/portfolio/project-image-5.jpg" alt="" class="img-responsive"/>
+                            </div> -->
                             <!-- //.project-wrapper -->
-                        </div>
+                       <!--  </div> -->
                         <!-- //.item -->
 
-                        <div class="item col-sm-6 col-md-3">
+                        <!-- <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
                                     <a href="assets/images/portfolio/project-image-6.jpg" class="zoom" title="The First Encounter">
@@ -247,21 +248,21 @@
                                     <a href="https://www.behance.net/gallery/25505317/The-first-Encounter" target="_blank" class="external-link">
                                         <i class="icon-Link"></i>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- //.project-link -->
 
-                                <div class="project-title">
+                                <!-- <div class="project-title">
                                     <h4>The First Encounter</h4>
-                                </div>
+                                </div> -->
                                 <!-- //.project-title -->
 
-                                <img src="/assets/images/portfolio/project-image-6.jpg" alt="" class="img-responsive"/>
-                            </div>
+                               <!--  <img src="/assets/images/portfolio/project-image-6.jpg" alt="" class="img-responsive"/>
+                            </div> -->
                             <!-- //.project-wrapper -->
-                        </div>
+                        <!-- </div> -->
                         <!-- //.item -->
 
-                        <div class="item col-sm-6 col-md-3">
+                        <!-- <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
                                     <a href="assets/images/portfolio/project-image-7.jpg" class="zoom" title="Dead Pool">
@@ -271,21 +272,21 @@
                                     <a href="https://www.behance.net/gallery/25763797/DEADPOOL" target="_blank" class="external-link">
                                         <i class="icon-Link"></i>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- //.project-link -->
 
-                                <div class="project-title">
+                                <!-- <div class="project-title">
                                     <h4>Dead Pool</h4>
-                                </div>
+                                </div> -->
                                 <!-- //.project-title -->
-
+<!-- 
                                 <img src="/assets/images/portfolio/project-image-7.jpg" alt="" class="img-responsive"/>
-                            </div>
+                            </div> -->
                             <!-- //.project-wrapper -->
-                        </div>
+                       <!--  </div> -->
                         <!-- //.item -->
 
-                        <div class="item col-sm-6 col-md-3">
+                        <!-- <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
                                     <a href="assets/images/portfolio/project-image-8.jpg" class="zoom" title="Rebus II">
@@ -295,18 +296,18 @@
                                     <a href="https://www.behance.net/gallery/19401293/Rebus-2" target="_blank" class="external-link">
                                         <i class="icon-Link"></i>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- //.project-link -->
 
-                                <div class="project-title">
+                               <!--  <div class="project-title">
                                     <h4>Rebus II</h4>
-                                </div>
+                                </div> -->
                                 <!-- //.project-title -->
-
+<!-- 
                                 <img src="/assets/images/portfolio/project-image-8.jpg" alt="" class="img-responsive"/>
-                            </div>
+                            </div>  -->
                             <!-- //.project-wrapper -->
-                        </div>
+                        <!--     -->
                         <!-- //.item -->
                     </div>
                     <!-- //.row -->

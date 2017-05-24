@@ -91,7 +91,15 @@
 #   {date: "August 15, 1812" , time_of_day: "Morning", name: "The Fort Dearborn Massacre", description_level_1: "They were evacuating the fort" , description_level_2: "About a mile into their trek", description_level_3: "80 men, women, and children", location_id: 15, category_id: 2, year: "1812"}
 #   ])
   
+# 136.times do
+#   Image.create([
+#      {url: "", caption: "", event_id: 2 }
+#      ])
+# end
     
-
+# Event.create([
+#     {date: "January 1, 1920", time_of_day: "Unknown", name: "The Syndicate", description_level_1: "The Volstead Act(Prohibition), enacted in 1920, made alcohol illegal.  Realizing that there was a ton of money to be made, Johnny Torrio, then head of the Chicago Outfit, sat down the crime families and carved up territory on a map where each of the groups were allowed to sell booze.", description_level_2: "The agreement was called the syndicate and ushered in a temporary peace among the gangsters.  The peace would only last a few years.", description_level_3: "t is rumored that the syndicate meetings took place at the Congress Plaza Hotel.  No one knows for certain where if they met here, but it is likely considering the hotel was considered a safe zone for gangster.  It was generally agreed upon that the area around the Congress should have no violence.", location_id: 1, category_id: 1, year: "1920"}
+#   ])
+  
   
 
