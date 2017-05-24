@@ -77,11 +77,11 @@
                             <!-- //.row -->
                         </div>
                         <!-- //CONTACT DETAILS END -->    
-
+                    </div>
                     <!-- PROFILE PICTURE START -->
                     <div class="col-md-5 hidden-xs hidden-sm match-height pp-wrapper">
                         <div class="profile-picture style-one">
-                            <img src="/assets/images/profile-picture-1.jpg" alt="profile picture" class="img-responsive"/>
+                            <img src="<%= @location.image %>" alt="profile picture" class="img-responsive"/>
                         </div>
                     </div>
                     <!-- //PROFILE PICTURE END -->
@@ -97,6 +97,7 @@
                                 
 
       <!-- PORTFOLIO SECTION START: Events Section Images -->
+    <% if current_user.level == "Scholar" %>
     <section id="portfolio" class="section">
         <div class="container-fluid section-wrapper">
             <div class="section-content">
@@ -113,12 +114,13 @@
                 <!-- //.row -->
                 
                 <!-- PORTFOLIO START -->
+
                 <div class="portfolio">
                     <div class="row">
                         <div class="item col-sm-6 col-md-3">
                             <div class="project-wrapper">
                                 <div class="project-link">
-                                    <a href="" class="zoom" title="">
+                                    <a href="<%= @event.images[0].url %>" class="zoom" title="">
                                         <i class="icon-Full-Screen"></i>
                                     </a>
 
@@ -129,7 +131,7 @@
                                 <!-- //.project-link -->
 
                                 <div class="project-title">
-                                    <h4></h4>
+                                    <h4> <%= @event.images[0].caption %> </h4>
                                 </div>
                                 <!-- //.project-title -->
 
@@ -315,6 +317,7 @@
         </div>
         <!-- //.container-fluid -->
     </section>
+    <% end %>
     <!-- //PORTFOLIO SECTION END -->
     <% end %>
 
@@ -329,9 +332,15 @@
               <div class="modal-body" style="color: black">
                 <h1>Congratulations <%= current_user.level %>!</h1>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="modal-footer" style="color: black">
+                <% if current_user.level == "Adventurer" %>
+                    Visit two more locations to unlock additional info!
+                <% elsif current_user.level == "Explorer" %>
+                    Visit two more location to unlock additional info and a bonus!
+                <% else %>
+                    You've reached the highest level!
+                <% end %>
+
               </div>
             </div>
           </div>
