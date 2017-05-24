@@ -13,7 +13,7 @@
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button onclick="geoAlert()">Check In</a></button>
+                                    <button class="btn btn-lg btn-custom" onclick="geoAlert()">Check In</a></button>
                                     <script> 
                                     function geoAlert() {
                                       alert('Please visit this location to learn more');
@@ -62,15 +62,15 @@
                                     <h4>Event Details</h4>
 
                                     <ul class="list-unstyled text-grey">
-                                        <li>When: <%= @event.year %></li>
-                                        <li>Date: <%= @event.date %></li>
-                                        <li>Time: <%= @event.time_of_day %></li>
+                                        <li>Level: <%= current_user.level %></li>
+                                        <li>Sites Discovered: <%= current_user.green %></li>
+                                        <li>Sites Visited: <%= current_user.red %></li>
                                     </ul>
                                 </div>
                                 <!-- //.col-md-5 -->
 
                                 <div class="col-sm-6 col-md-7">
-                                    <a href="/events/calculated?category_id=<%= @event.category.id %>"" class="btn btn-lg btn-custom">Find another location
+                                    <a href="/events/calculated?category_id=<%= @event.category.id %>"" class="btn btn-lg btn-custom">Find more history
                                     </a>
                                 </div>
                                 <!-- //.col-md-6 -->

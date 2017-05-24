@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           }
           console.log("Location:", location.events.map(event => event.id));
           var textBoxOne = "";
-          textBoxOne += "<div>" + location.current_name;
+          textBoxOne += "<div>" + "<h4>" + location.current_name + "</h4>";
           textBoxOne += "<br>" + "</br>";
           textBoxOne += "<p>" + location.description + "</p>"; 
           textBoxOne += "<div>";
